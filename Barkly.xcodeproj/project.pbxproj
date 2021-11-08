@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025F40412733675F00A37133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02932A66272FC9D6008DFA3F /* Assets.xcassets */; };
 		02932A63272FC9D3008DFA3F /* BarklyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02932A62272FC9D3008DFA3F /* BarklyApp.swift */; };
 		02932A65272FC9D3008DFA3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02932A64272FC9D3008DFA3F /* ContentView.swift */; };
-		02932A67272FC9D6008DFA3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02932A66272FC9D6008DFA3F /* Assets.xcassets */; };
 		02932A6A272FC9D6008DFA3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02932A69272FC9D6008DFA3F /* Preview Assets.xcassets */; };
 		02932A75272FC9D7008DFA3F /* BarklyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02932A74272FC9D7008DFA3F /* BarklyTests.swift */; };
 		02932A80272FC9D7008DFA3F /* BarklyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02932A7F272FC9D7008DFA3F /* BarklyUITests.swift */; };
@@ -233,8 +233,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025F40412733675F00A37133 /* Assets.xcassets in Resources */,
 				02932A6A272FC9D6008DFA3F /* Preview Assets.xcassets in Resources */,
-				02932A67272FC9D6008DFA3F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = barkly.Barkly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = barkly.Barkly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
