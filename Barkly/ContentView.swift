@@ -21,6 +21,7 @@ let calendar = Calendar.current
 let monthName = DateFormatter().monthSymbols[calendar.component(.month, from: now) - 1]
 
 var usernameSave = UserDefaults.standard.string(forKey: "username")
+var me = true
 
 struct ContentView: View {
     var body: some View {
@@ -46,15 +47,17 @@ struct ImageOverlayBig: View {
     @State public var username: String = usernameSave ?? ""
     var body: some View {
         ZStack {
-            TextField("Enter Name", text: $username)
-                .position(x: imageBig!.size.width/2, y: (imageSmall!.size.height/4) - 634)
-                .frame(width: imageBig!.size.width, height: 42, alignment: .center)
-                .fixedSize(horizontal: true, vertical: true)
-                .foregroundColor(Color(UIColor.init(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)))
-                .font(.system(size: 28, weight: .bold, design: .serif))
-                .multilineTextAlignment(.center)
-                .disableAutocorrection(true)
-            let _ = saveUser(username: username)
+            if !me {
+                TextField("Enter Name", text: $username)
+                    .position(x: imageBig!.size.width/2, y: (imageSmall!.size.height/4) - 634)
+                    .frame(width: imageBig!.size.width, height: 42, alignment: .center)
+                    .fixedSize(horizontal: true, vertical: true)
+                    .foregroundColor(Color(UIColor.init(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)))
+                    .font(.system(size: 28, weight: .bold, design: .serif))
+                    .multilineTextAlignment(.center)
+                    .disableAutocorrection(true)
+                let _ = saveUser(username: username)
+            }
         }
     }
 }
@@ -63,15 +66,17 @@ struct ImageOverlaySmall: View {
     @State private var username: String = usernameSave ?? ""
     var body: some View {
         ZStack {
-            TextField("Enter Name", text: $username)
-                .position(x: imageSmall!.size.width/2, y: (imageSmall!.size.height/4) - 549.5)
-                .frame(width: imageSmall!.size.width, height: 42, alignment: .center)
-                .fixedSize(horizontal: true, vertical: true)
-                .foregroundColor(Color(UIColor.init(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)))
-                .font(.system(size: 28, weight: .bold, design: .serif))
-                .multilineTextAlignment(.center)
-                .disableAutocorrection(true)
-            let _ = saveUser(username: username)
+            if !me {
+                TextField("Enter Name", text: $username)
+                    .position(x: imageSmall!.size.width/2, y: (imageSmall!.size.height/4) - 549.5)
+                    .frame(width: imageSmall!.size.width, height: 42, alignment: .center)
+                    .fixedSize(horizontal: true, vertical: true)
+                    .foregroundColor(Color(UIColor.init(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)))
+                    .font(.system(size: 28, weight: .bold, design: .serif))
+                    .multilineTextAlignment(.center)
+                    .disableAutocorrection(true)
+                let _ = saveUser(username: username)
+            }
         }
     }
 }
@@ -92,9 +97,11 @@ func drawRectangleOnImageBig(image: UIImage) -> UIImage {
     UIColor.init(red: 0/255, green: 51/255, blue: 98/255, alpha: 1).setFill()
     UIRectFill(rectangleBlue)
     
-    let rectangleWhite = CGRect(x: 0, y: (imageSize.height/2) - 650, width: imageSize.width, height: 60)
-    UIColor.init(red: 1, green: 1, blue: 1, alpha: 1).setFill()
-    UIRectFill(rectangleWhite)
+    if !me {
+        let rectangleWhite = CGRect(x: 0, y: (imageSize.height/2) - 650, width: imageSize.width, height: 60)
+        UIColor.init(red: 1, green: 1, blue: 1, alpha: 1).setFill()
+        UIRectFill(rectangleWhite)
+    }
     
     let rectangleGreen = CGRect(x: 0, y: (imageSize.height/2) - 460, width: imageSize.width, height: 70)
     UIColor.init(red: 185/255, green: 211/255, blue: 181/255, alpha: 1).setFill()
@@ -116,9 +123,11 @@ func drawRectangleOnImageSmall(image: UIImage) -> UIImage {
     UIColor.init(red: 0/255, green: 51/255, blue: 98/255, alpha: 1).setFill()
     UIRectFill(rectangleBlue)
     
-    let rectangleWhite = CGRect(x: 0, y: (imageSize.height/2) - 480, width: imageSize.width, height: 70)
-    UIColor.init(red: 1, green: 1, blue: 1, alpha: 1).setFill()
-    UIRectFill(rectangleWhite)
+    if !me {
+        let rectangleWhite = CGRect(x: 0, y: (imageSize.height/2) - 480, width: imageSize.width, height: 70)
+        UIColor.init(red: 1, green: 1, blue: 1, alpha: 1).setFill()
+        UIRectFill(rectangleWhite)
+    }
     
     let rectangleGreen = CGRect(x: 0, y: (imageSize.height/2) - 285, width: imageSize.width, height: 70)
     UIColor.init(red: 185/255, green: 211/255, blue: 181/255, alpha: 1).setFill()
